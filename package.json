@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/JaxToh/Holidays/issues"
   },
-  "homepage": "https://github.com/JaxToh/Holidays#readme"
+  "homepage": "https://github.com/JaxToh/Holidays#readme",
+  "dependencies": {
+    "vite": "^4.0.0"
+  }
 }
