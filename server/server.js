@@ -3,16 +3,21 @@ const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const holidaysController = require("./controllers/holidaysController");
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
 const MONGO_URI = process.env.MONGO_URI;
-
-console.log("Mongo_URI", MONGO_URI);
 mongoose.connect(MONGO_URI);
 
+app.set("strictQuery", false);
+app.set("runValidators", true);
+app.set("debug", true);
+
+app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("../client/dist"));
+app.use("/api/holidays", holidaysController);
 
 app.get("/api/", (req, res) => {
   res.json({ msg: "Hello World!" });

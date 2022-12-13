@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "cd server && npm run start",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm run build"
   },
   "workspaces": [
     "client",
