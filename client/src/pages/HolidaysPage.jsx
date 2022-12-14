@@ -1,10 +1,13 @@
+import HolidayCreateForm from "../components/holidays/HolidayCreateForm";
+import HolidaysTable from "../components/holidays/HolidaysTable";
 import Navbar from "../components/Navbar";
 
 function HolidaysPage() {
   return (
     <>
       <Navbar />
-      <p>Table of holidays</p>
+      <HolidayCreateForm />
+      <HolidaysTable />
     </>
   );
 }

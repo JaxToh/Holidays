@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import EditHolidaysPage from "./pages/EditHolidaysPage";
 import HolidaysPage from "./pages/HolidaysPage";
+import "./App.css";
 
 function App() {
   return (
