@@ -45,6 +45,12 @@ app.post("/api/sessions", (req, res) => {
   }
 });
 
+app.delete("/api/sessions", (req, res) => {
+  req.session.destroy(() => {
+    res.json({ msg: "Logout success" });
+  });
+});
+
 const checkLogin = (req, res, next) => {
   if (req.session.login !== "simon") {
     //? matches login -> check

@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 
 // const log = debug("holidays:pages:EditHolidaysPage");
 
-function EditHolidaysPage() {
+function EditHolidaysPage({ notLoggedIn }) {
   const navigate = useNavigate();
   const { id } = useParams();
   const [holiday, setHoliday] = useState({});
@@ -33,6 +33,12 @@ function EditHolidaysPage() {
     await response.json();
     navigate("/holidays");
   };
+
+  useEffect(() => {
+    if (notLoggedIn) {
+      navigate("/");
+    }
+  }, [navigate, notLoggedIn]);
 
   useEffect(() => {
     const fetchHoliday = async () => {
