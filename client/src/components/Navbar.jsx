@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ setNotLoggedIn }) {
   const navigate = useNavigate();
   const [msg, setMsg] = useState({});
 
@@ -20,6 +20,7 @@ function Navbar() {
         .then((request) => request.json())
         .then((data) => setMsg(data));
       navigate("/holidays/6398311e1dea6cd01b130951");
+      setNotLoggedIn(false);
     }
   };
 
@@ -31,7 +32,7 @@ function Navbar() {
 
   return (
     <nav>
-      <ul>
+      <ul className="flex">
         <li>
           <Link to="/holidays">Holidays</Link>
         </li>

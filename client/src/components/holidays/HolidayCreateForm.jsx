@@ -29,15 +29,17 @@ function HolidayCreateForm() {
     <>
       <fieldset>
         <legend>Create Holiday</legend>
-        <label>
-          Holiday Name:
-          <input
-            name="name"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </label>
-        <button onClick={handleCreate}>Create</button>
+        <div className="centered">
+          <label>
+            Holiday Name:
+            <input
+              name="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </label>
+          <button onClick={handleCreate}>Create</button>
+        </div>
       </fieldset>
       <p>{msg}</p>
     </>
